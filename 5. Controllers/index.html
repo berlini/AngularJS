@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="TesteApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <title>Angular JS - Expressions</title>
+</head>
+<body>
+    <div ng-controller="teste">
+        Selecione:
+        <button ng-click="teste1()">Teste 1</button>
+        <button ng-click="teste2()">Teste 2</button>
+        <button ng-click="teste3()">Teste 3</button>
+        <button ng-click="teste4()">Teste 4</button>
+
+        <p>Você escolheu {{myTeste}}</p>
+    </div>
+</body>
+
+<script>
+    var app = angular.module('TesteApp', []);
+
+    app.controller('teste', function($scope) {
+        $scope.myTeste = 'Não selecionado';
+        
+        $scope.teste1 = function() {
+            $scope.myTeste = 'Teste 1';
+        };
+
+        $scope.teste2 = function() {
+            $scope.myTeste = 'Teste 2';
+        };
+
+        $scope.teste3 = function() {
+            $scope.myTeste = 'Teste 3';
+        };
+
+        $scope.teste4 = function() {
+            $scope.myTeste = 'Teste 4';
+        };
+    });
+</script>
+</html>
